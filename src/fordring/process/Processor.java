@@ -1,7 +1,10 @@
-package fordring;
+package fordring.process;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import fordring.executers.Executer;
+import fordring.msg.Command;
 
 public class Processor {
 	public Map<String, Executer> map = new HashMap<String, Executer>();

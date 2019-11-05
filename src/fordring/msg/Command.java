@@ -1,4 +1,4 @@
-package fordring;
+package fordring.msg;
 
 import java.util.Scanner;
 
@@ -13,5 +13,13 @@ public class Command {
 		this.cmds = cmds;
 		inited = true;
 		return inited;
+	}
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for(String s:cmds) {
+			sb.append(s+" ");
+		}
+		return sb.toString();
 	}
 }

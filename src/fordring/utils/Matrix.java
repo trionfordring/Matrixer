@@ -78,27 +78,27 @@ public class Matrix {
 
 	}
 
-	public Matrix multiply(Matrix b) {
+	public Matrix multiply(Matrix bb) {
 
-		if (this.col != b.row) {
+		if (bb.col != this.row) {
 
 			return null;
 
 		}
 
-		double mul[][] = new double[this.row][b.col];
+		double mul[][] = new double[bb.row][this.col];
 
 		double temp = 0;
 
-		for (int i = 0; i < this.row; i++) {
+		for (int i = 0; i < bb.row; i++) {
 
-			for (int k = 0; k < b.col; k++) {
+			for (int k = 0; k < this.col; k++) {
 
-				for (int j = 0; j < this.col; j++)
+				for (int j = 0; j < bb.col; j++)
 
 				{
 
-					temp += this.Data[i][j] * b.Data[j][k];
+					temp += bb.Data[i][j] * this.Data[j][k];
 
 				}
 
@@ -110,9 +110,7 @@ public class Matrix {
 
 		}
 
-		Matrix another = new Matrix(this.row, b.col, mul);
-
-		System.out.println("after multiply:");
+		Matrix another = new Matrix(bb.row, this.col, mul);
 
 		return another;
 
@@ -167,3 +165,5 @@ public class Matrix {
 	}
 
 }
+
+
